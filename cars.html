@@ -1,0 +1,243 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Cars Array Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #e3f2fd, #bbdefb);
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #0d47a1;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
+        input {
+            padding: 8px;
+            margin: 5px;
+            width: 40%;
+        }
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            background-color: #1565c0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0d47a1;
+        }
+        table {
+            width: 100%;
+            margin-top: 15px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #90caf9;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: #bbdefb;
+        }
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #1b5e20;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🚗 Cars Array Demo</h1>
+    <div class="container">
+        <h3>Manage Cars</h3>
+        <input type="text" id="addCar" placeholder="Enter car to add">
+        <button onclick="addCar()">Add Car</button>
+        <br>
+        <input type="text" id="deleteCar" placeholder="Enter car to delete">
+        <button onclick="deleteCar()">Delete Car</button>
+        <br><br>
+        <button onclick="showCars()">Show Cars (forEach)</button>
+        <button onclick="filterCars()">Filter Cars</button>
+        <button onclick="mapCars()">Map Cars (to uppercase)</button>
+        <button onclick="popCar()">Pop Last Car</button>
+        <button onclick="sortCars()">Sort Cars</button>
+        <button onclick="shiftCar()">Shift First Car</button>
+        <button onclick="unshiftCar()">Unshift 'Tesla'</button>
+        
+        <div id="message"></div>
+        <table id="carsTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Car Name</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        let cars = ["BMW", "Audi", "Ferrari", "Toyota"];
+
+        function updateTable() {
+            const tbody = document.querySelector("#carsTable tbody");
+            tbody.innerHTML = "";
+            cars.forEach((car, index) => {
+                let row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${car}</td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+        }
+
+        function setMessage(msg) {
+            document.getElementById("message").textContent = msg;
+        }
+
+        function addCar() {
+            let car = document.getElementById("addCar").value.trim();
+            if (car) {
+                cars.push(car);
+                setMessage(`Added: ${car}`);
+                document.getElementById("addCar").value = "";
+                updateTable();
+            } else {
+                alert("Please enter a car name to add.");
+            }
+        }
+
+        function deleteCar() {
+            let car = document.getElementById("deleteCar").value.trim();
+            if (car) {
+                let index = cars.indexOf(car);
+                if (index !== -1) {
+                    cars.splice(index, 1);
+                    setMessage(`Deleted: ${car}`);
+                } else {
+                    setMessage(`Car not found: ${car}`);
+                }
+                document.getElementById("deleteCar").value = "";
+                updateTable();
+            } else {
+                alert("Please enter a car name to delete.");
+            }
+        }
+
+        function showCars() {
+            setMessage("Showing Cars using forEach");
+            updateTable();
+        }
+
+        function filterCars() {
+            let filtered = cars.filter(car => car.length > 4);
+            setMessage("Filtered Cars (length > 4)");
+            const tbody = document.querySelector("#carsTable tbody");
+            tbody.innerHTML = "";
+            filtered.forEach((car, index) => {
+                tbody.innerHTML += `<tr><td>${index + 1}</td><td>${car}</td></tr>`;
+            });
+        }
+
+        function mapCars() {
+            let mapped = cars.map(car => car.toUpperCase());
+            setMessage("Mapped Cars (uppercase)");
+            const tbody = document.querySelector("#carsTable tbody");
+            tbody.innerHTML = "";
+            mapped.forEach((car, index) => {
+                tbody.innerHTML += `<tr><td>${index + 1}</td><td>${car}</td></tr>`;
+            });
+        }
+
+        function popCar() {
+            let removed = cars.pop();
+            setMessage(`Popped last car: ${removed}`);
+            updateTable();
+        }
+
+        function sortCars() {
+            cars.sort();
+            setMessage("Cars sorted alphabetically");
+            updateTable();
+        }
+
+        function shiftCar() {
+            let removed = cars.shift();
+            setMessage(`Shifted first car: ${removed}`);
+            updateTable();
+        }
+
+        function unshiftCar() {
+            cars.unshift("Tesla");
+            setMessage("Unshifted 'Tesla' to start");
+            updateTable();
+        }
+
+        // Show initial table
+        updateTable();
+    </script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Print & Delete Specific Item (Stored in Array)</h2>
+
+    <input type="text" id="userInput" placeholder="Enter something...">
+    <button onclick="addItem()">Add</button>
+    <button onclick="deleteItem()">Delete This</button>
+
+    <h3>Stored Items:</h3>
+    <div id="appendArea"></div>
+
+    <script>
+        // Array to store all added items
+        let itemsArray = [];
+
+        function renderItems() {
+            // Clear the display
+            document.getElementById("appendArea").innerHTML = "";
+
+            // Display all items from the array
+            itemsArray.forEach(item => {
+                let p = document.createElement("p");
+                p.textContent = item;
+                document.getElementById("appendArea").appendChild(p);
+            });
+        }
+
+        function addItem() {
+            let text = document.getElementById("userInput").value.trim();
+
+            if (text && !itemsArray.includes(text)) { // Avoid empty & duplicates
+                itemsArray.push(text);
+                renderItems();
+            }
+        }
+
+        function deleteItem() {
+            let textToDelete = document.getElementById("userInput").value.trim();
+
+            // Filter out matching items
+            itemsArray = itemsArray.filter(item => item !== textToDelete);
+            renderItems();
+        }
+    </script>
+</body>
+</html>

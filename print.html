@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Array Operations with Map Includes Check</h2>
+
+    <input type="text" id="userInput" placeholder="Enter something...">
+    <button onclick="addItem()">Add</button>
+    <button onclick="deleteItem()">Delete This</button>
+
+    <h3>Stored Items:</h3>
+    <div id="appendArea"></div>
+
+    <hr>
+
+    <h3>Filter Section</h3>
+    <input type="text" id="filterInput" placeholder="Filter keyword...">
+    <button onclick="applyFilter()">Filter</button>
+    <div id="filterOutput"></div>
+
+    <h3>Map Section (Check if each stored item includes given text)</h3>
+    <input type="text" id="mapInput" placeholder="Enter text to check...">
+    <button onclick="checkIncludes()">Check Includes</button>
+    <div id="mapOutput"></div>
+
+    <h3>Pop Section (Remove last element)</h3>
+    <button onclick="applyPop()">Pop</button>
+    <div id="popOutput"></div>
+
+    <h3>ForEach Section</h3>
+    <button onclick="applyForEach()">ForEach</button>
+    <div id="forEachOutput"></div>
+
+    <script>
+        let itemsArray = [];
+
+        function renderItems() {
+            document.getElementById("appendArea").innerHTML = "";
+            itemsArray.forEach(item => {
+                let p = document.createElement("p");
+                p.textContent = item;
+                document.getElementById("appendArea").appendChild(p);
+            });
+        }
+
+        function addItem() {
+            let text = document.getElementById("userInput").value.trim();
+            if (text && !itemsArray.includes(text)) {
+                itemsArray.push(text);
+                renderItems();
+            }
+        }
+
+        function deleteItem() {
+            let textToDelete = document.getElementById("userInput").value.trim();
+            itemsArray = itemsArray.filter(item => item !== textToDelete);
+            renderItems();
+        }
+
+        function applyFilter() {
+            let keyword = document.getElementById("filterInput").value.trim();
+            let filtered = itemsArray.filter(item => item.includes(keyword));
+            document.getElementById("filterOutput").innerHTML = filtered.join(", ") || "No match found.";
+        }
+
+        // Map: check if stored items include given value
+        function checkIncludes() {
+            let keyword = document.getElementById("mapInput").value.trim();
+            let results = itemsArray.map(item => item.includes(keyword));
+            document.getElementById("mapOutput").innerHTML = results.join(", ");
+        }
+
+        function applyPop() {
+            if (itemsArray.length > 0) {
+                let popped = itemsArray.pop();
+                renderItems();
+                document.getElementById("popOutput").innerHTML = "Removed: " + popped;
+            } else {
+                document.getElementById("popOutput").innerHTML = "Array is empty.";
+            }
+        }
+
+        function applyForEach() {
+            let output = "";
+            itemsArray.forEach((item, index) => {
+                output += `Index ${index}: ${item}<br>`;
+            });
+            document.getElementById("forEachOutput").innerHTML = output || "Array is empty.";
+        }
+    </script>
+</body>
+</html>

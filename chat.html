@@ -1,0 +1,75 @@
+<html>
+<head>
+    <title> GOOGLE AI CHAT</title>
+   <link rel="stylesheet" href="style.css">
+
+        <script>
+  
+        function sendMsg(){
+        const promptNode= document.getElementById('prompt');
+        const chatlistNode = document.getElementById('conversation');
+        const sendButtonNode = document.getElementById('send');
+        let msgElement = document.createElement('h3');
+        msgElement.style.color='blue';
+        msgElement.style.margin='10px';
+        msgElement.style.padding='10px';
+        msgElement.style.border='1px solid #ccc';
+        msgElement.innerHTML = promptNode.value 
+        chatlistNode.appendChild(msgElement);
+        
+        const myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            myHeaders.append("X-goog-api-key", "AIzaSyAJR6H4jYT-Ka3ZRnpgeR7uK1KLp2mfjiU");
+
+const raw = JSON.stringify({
+  "contents": [
+    {
+      "parts": [
+        {
+          "text": promptNode.value
+        }
+      ]
+    }
+  ]
+});
+
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: raw,
+  redirect: "follow"
+};
+
+fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent", requestOptions)
+  .then((response) => response.json())
+  .then((result) => {
+    console.log(result);
+    
+    let botAns = document.createElement('h4')
+    botAns.style.color='red';
+       botAns.style.margin ='10px';
+       botAns.style.padding ='10px';
+       botAns.style.border ='1px solid #ccc';
+       botAns.innerHTML = result['candidate'][0].content.parts[0].text;
+       chatlistNode.appendChild(botAns);
+  })
+    .catch((error) => console.error(error));
+} 
+  
+    </script>
+</head>
+<body>
+    <center>
+        <div class="chat-container">
+    
+        <h1> Google AI Chat</h1>
+        <div id="conversation">
+
+        <div class="input-area">
+        <input id="prompt" placeholder="propmt here"/>
+        <button id="send" onclick="sendMsg()">Send</button>
+           </div>
+</div></div>
+    </center>
+</body>
+</html>

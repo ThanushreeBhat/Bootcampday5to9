@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripzee - Your Travel Companion</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header and Navigation */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .logo h1 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Main content area */
+        main {
+            min-height: 70vh;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(
+                135deg,
+                rgba(102, 126, 234, 0.9) 0%,
+                rgba(118, 75, 162, 0.8) 50%,
+                rgba(139, 92, 246, 0.9) 100%
+            ),
+            radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+            conic-gradient(from 230.29deg at 51.63% 52.16%, #667eea 0deg, #764ba2 67.5deg, #8b5cf6 198.75deg, #667eea 251.25deg, #764ba2 301.88deg, #667eea 360deg);
+            background-size: 100% 100%, 200% 200%, 200% 200%, 400% 400%;
+            background-position: 0% 0%, 0% 0%, 100% 100%, 0% 0%;
+            border-radius: 20px;
+            color: white;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 20%);
+            animation: floatingElements 10s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 0%, 0% 0%, 100% 100%, 0% 0%;
+            }
+            25% {
+                background-position: 100% 0%, 20% 20%, 80% 80%, 25% 25%;
+            }
+            50% {
+                background-position: 100% 100%, 40% 40%, 60% 60%, 50% 50%;
+            }
+            75% {
+                background-position: 0% 100%, 60% 60%, 40% 40%, 75% 75%;
+            }
+        }
+
+        @keyframes floatingElements {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-10px) rotate(120deg);
+            }
+            66% {
+                transform: translateY(-5px) rotate(240deg);
+            }
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, #e55a2b 0%, #e6821a 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Indian and International Sections */
+        .indian-packages, .international-packages {
+            margin: 4rem 0;
+            padding: 2rem 0;
+        }
+
+        .indian-packages {
+            background: linear-gradient(135deg, #f8faff 0%, #e8f2ff 100%);
+            border-radius: 15px;
+            padding: 3rem 2rem;
+        }
+
+        .international-packages {
+            background: linear-gradient(135deg, #faf8ff 0%, #f2e8ff 100%);
+            border-radius: 15px;
+            padding: 3rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .view-all-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .view-all-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .highlights {
+            color: #8b5cf6;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .package-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .package-info {
+            padding: 1.5rem;
+        }
+
+        .package-info h3 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .destination {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .duration {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+
+        .per-person {
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: normal;
+        }
+
+        .book-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .book-btn:hover {
+            transform: scale(1.02);
+        }
+
+        /* Quick Booking Section */
+        .quick-booking {
+            background: linear-gradient(135deg, #f8faff 0%, #e8f2ff 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+
+        .quick-booking h2 {
+            text-align: center;
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .booking-form input,
+        .booking-form select,
+        .booking-form textarea {
+            padding: 1rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .booking-form input:focus,
+        .booking-form select:focus,
+        .booking-form textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .booking-form textarea {
+            grid-column: 1 / -1;
+            margin-bottom: 1rem;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.02);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-booking {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="https://via.placeholder.com/60/667eea/white?text=T" alt="Tripzee Logo">
+                <h1>Tripzee</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html" class="active">HOME</a></li>
+                <li><a href="indian.html">INDIAN</a></li>
+                <li><a href="international.html">INTERNATIONAL</a></li>
+                <li><a href="ourpackages.html">OUR PACKAGES</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Discover Your Next Adventure</h2>
+            <p>Explore amazing destinations with our curated travel packages</p>
+            <button class="cta-button" onclick="scrollToPackages()">Browse Packages</button>
+        </section>
+
+        <section class="indian-packages" id="packages">
+            <div class="section-header">
+                <h2>🇮🇳 Indian Destinations</h2>
+                <p>Discover the incredible diversity of India</p>
+                <a href="indian.html" class="view-all-btn">View All Indian Packages</a>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <img src="https://via.placeholder.com/300x200/6366f1/white?text=Goa+Beach" alt="Goa Beach Package">
+                    <div class="package-info">
+                        <h3>Goa Beach Paradise</h3>
+                        <p class="destination">📍 Goa, India</p>
+                        <p class="duration">5 Days / 4 Nights</p>
+                        <div class="highlights">🏖️ Beaches • 🍤 Seafood • 🎉 Nightlife</div>
+                        <div class="price">₹15,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Goa Beach Paradise')">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <img src="https://via.placeholder.com/300x200/8b5cf6/white?text=Kerala+Backwaters" alt="Kerala Backwaters">
+                    <div class="package-info">
+                        <h3>Kerala Backwaters</h3>
+                        <p class="destination">📍 Kerala, India</p>
+                        <p class="duration">6 Days / 5 Nights</p>
+                        <div class="highlights">🛶 Houseboat • 🌴 Coconut Groves • ☕ Spice Gardens</div>
+                        <div class="price">₹22,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Kerala Backwaters')">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <img src="https://via.placeholder.com/300x200/667eea/white?text=Rajasthan+Royal" alt="Rajasthan Royal Tour">
+                    <div class="package-info">
+                        <h3>Rajasthan Royal Tour</h3>
+                        <p class="destination">📍 Rajasthan, India</p>
+                        <p class="duration">8 Days / 7 Nights</p>
+                        <div class="highlights">🏰 Palaces • 🐪 Desert Safari • 🎨 Culture</div>
+                        <div class="price">₹35,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Rajasthan Royal Tour')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="international-packages">
+            <div class="section-header">
+                <h2>🌍 International Destinations</h2>
+                <p>Explore the world beyond borders</p>
+                <a href="international.html" class="view-all-btn">View All International Packages</a>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <img src="https://via.placeholder.com/300x200/764ba2/white?text=Dubai+Luxury" alt="Dubai Luxury">
+                    <div class="package-info">
+                        <h3>Dubai Luxury Experience</h3>
+                        <p class="destination">🌍 Dubai, UAE</p>
+                        <p class="duration">5 Days / 4 Nights</p>
+                        <div class="highlights">🏢 Burj Khalifa • 🛍️ Shopping • 🏖️ Beaches</div>
+                        <div class="price">₹45,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Dubai Luxury Experience')">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <img src="https://via.placeholder.com/300x200/6366f1/white?text=Thailand+Adventure" alt="Thailand Adventure">
+                    <div class="package-info">
+                        <h3>Thailand Adventure</h3>
+                        <p class="destination">🌍 Bangkok & Phuket</p>
+                        <p class="duration">7 Days / 6 Nights</p>
+                        <div class="highlights">🛕 Temples • 🏝️ Islands • 🍜 Street Food</div>
+                        <div class="price">₹38,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Thailand Adventure')">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <img src="https://via.placeholder.com/300x200/8b5cf6/white?text=Europe+Classic" alt="Europe Classic">
+                    <div class="package-info">
+                        <h3>Europe Classic Tour</h3>
+                        <p class="destination">🌍 Paris, Rome, London</p>
+                        <p class="duration">10 Days / 9 Nights</p>
+                        <div class="highlights">🗼 Eiffel Tower • 🏛️ Colosseum • 🎭 West End</div>
+                        <div class="price">₹85,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Europe Classic Tour')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-booking">
+            <h2>Quick Booking</h2>
+            <form class="booking-form" onsubmit="handleQuickBooking(event)">
+                <div class="form-row">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-row">
+                    <input type="tel" placeholder="Phone Number" required>
+                    <select required>
+                        <option value="">Select Package Type</option>
+                        <option value="indian">Indian Destinations</option>
+                        <option value="international">International Destinations</option>
+                        <option value="custom">Custom Package</option>
+                    </select>
+                </div>
+                <textarea placeholder="Tell us about your dream trip..." rows="3"></textarea>
+                <button type="submit" class="submit-btn">Get Quote</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function scrollToPackages() {
+            document.getElementById('packages').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function bookPackage(packageName) {
+            alert(`Great choice! You selected: ${packageName}\n\nRedirecting to booking form...`);
+            // In a real website, this would redirect to a detailed booking page
+        }
+
+        function handleQuickBooking(event) {
+            event.preventDefault();
+            alert('Thank you for your interest! We will contact you within 24 hours with a customized quote.');
+            event.target.reset();
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Tripzee. All rights reserved.</p>
+    </footer>
+</body>
+</html>

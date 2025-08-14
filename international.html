@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Destinations - Tripzee</title>
+    <link rel="stylesheet" href="style2.css">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/image.png" alt="Tripzee Logo">
+                <h1>Tripzee</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="indian.html">INDIAN</a></li>
+                <li><a href="international.html" class="active">INTERNATIONAL</a></li>
+                <li><a href="ourpackages.html">OUR PACKAGES</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>🌍 International Destinations</h1>
+            <p>Explore the world beyond borders with our carefully curated international travel packages</p>
+        </div>
+
+        <h2 class="section-title">Popular International Packages</h2>
+
+        <div class="packages-grid">
+            <!-- Original 3 packages from home page -->
+            <div class="package-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9u1YzRPduJdaYvl_VUG3MXrZWuFbRD-Fc2w&s" alt="Dubai Luxury">
+                <div class="package-info">
+                    <h3>Dubai Luxury Experience</h3>
+                    <p class="destination">🌍 Dubai, UAE</p>
+                    <p class="duration">5 Days / 4 Nights</p>
+                    <div class="highlights">🏢 Burj Khalifa • 🛍️ Shopping • 🏖️ Beaches</div>
+                    <div class="price">₹45,999 <span class="per-person">per person</span></div>
+                    <button class="book-btn" onclick="bookPackage('Dubai Luxury Experience')">Book Now</button>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <img src="https://www.shutterstock.com/image-photo/traveler-woman-joy-relaxing-on-600nw-1041475570.jpg" alt="Thailand Adventure">
+                <div class="package-info">
+                    <h3>Thailand Adventure</h3>
+                    <p class="destination">🌍 Bangkok & Phuket</p>
+                    <p class="duration">7 Days / 6 Nights</p>
+                    <div class="highlights">🛕 Temples • 🏝️ Islands • 🍜 Street Food</div>
+                    <div class="price">₹38,999 <span class="per-person">per person</span></div>
+                    <button class="book-btn" onclick="bookPackage('Thailand Adventure')">Book Now</button>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqw2Pjaic3U-Rq-XDXEMzKZGlu-V8BgPOdaQ&s" alt="Europe Classic">
+                <div class="package-info">
+                    <h3>Europe Classic Tour</h3>
+                    <p class="destination">🌍 Paris, Rome, London</p>
+                    <p class="duration">10 Days / 9 Nights</p>
+                    <div class="highlights">🗼 Eiffel Tower • 🏛️ Colosseum • 🎭 West End</div>
+                    <div class="price">₹85,999 <span class="per-person">per person</span></div>
+                    <button class="book-btn" onclick="bookPackage('Europe Classic Tour')">Book Now</button>
+                </div>
+            </div>
+
+            <!-- 6 Additional international packages -->
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500" alt="Bali Paradise">
+                <div class="package-info">
+                    <h3>Bali Paradise</h3>
+                    <p class="destination">🌍 Bali, Indonesia</p>
+                    <p class="duration">6 Days / 5 Nights</p>
+                    <div class="highlights">🏖️ Beaches • 🛕 Temples • 🌾 Rice Terraces</div>
+                    <div class="price">₹32,999 <span class="per-person">per person</span></div>
+                    <button class="book-btn" onclick="bookPackage('Bali Paradise')">Book Now</button>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=500" alt="Japan Cherry Blossom">
+                <div class="package-info">
+                    <h3>Japan Cherry Blossom</h3>
+                    <p class="destination">🌍 Tokyo & Kyoto, Japan</p>
+                    <p class="duration">8 Days / 7 Nights</p>
+                    <div class="highlights">🌸 Sakura • 🏯 Temples • 🍱 Cuisine</div>
+                    <div class="price">₹75,999 <span class="per-person">per person</span></div>
+                    <button class="book-btn" onclick="bookPackage('Japan Cherry Blossom')">Book Now</button>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?w=500" alt="Maldives Luxury">
+                <div class="package-info">
+                    <h3>Maldives Luxury Resort</h3>
+                    <p class="destination">🌍 Maldives</p>
+                    <p class="duration">5 Days / 4 Nights</p>
+                    <div class="highlights">🏝️ Water Villas • 🐠 Snorkeling • 🥥 All-Inclusive</div>
+                    <div class="price">₹95,999 <span class="per-person">per person</span></div>
+                    <button class="book-btn" onclick="bookPackage('Maldives Luxury Resort')">Book Now</button>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500" alt="Switzerland Alps">
+                <div class="package-info">
+                    <h3>Switzerland Alps Adventure</h3>
+                    <p class="destination">🌍 Interlaken & Zermatt</p>
+                    <p class="duration">7 Days / 6 Nights</p>
+                    <div class="highlights">⛰️ Mountains • 🚂 Scenic Trains • 🧀 Swiss Culture</div>
+                    <div class="price">₹89,999 <span class="per-person">per person</span></div>
+                    <button class="book-btn" onclick="bookPackage('Switzerland Alps Adventure')">Book Now</button>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=500" alt="Santorini Greece">
+                <div class="package-info">
+                    <h3>Santorini Romance</h3>
+                    <p class="destination">🌍 Santorini, Greece</p>
+                    <p class="duration">5 Days / 4 Nights</p>
+                    <div class="highlights">🏛️ Architecture • 🌅 Sunsets • 🍷 Wine Tasting</div>
+                    <div class="price">₹55,999 <span class="per-person">per person</span></div>
+                    <button class="book-btn" onclick="bookPackage('Santorini Romance')">Book Now</button>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=500" alt="Egypt Pyramids">
+                <div class="package-info">
+                    <h3>Egypt Historical Tour</h3>
+                    <p class="destination">🌍 Cairo & Luxor, Egypt</p>
+                    <p class="duration">6 Days / 5 Nights</p>
+                    <div class="highlights">🔺 Pyramids • 🏛️ Ancient Temples • 🛶 Nile Cruise</div>
+                    <div class="price">₹42,999 <span class="per-person">per person</span></div>
+                    <button class="book-btn" onclick="bookPackage('Egypt Historical Tour')">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="quick-booking">
+            <h2>Quick Booking</h2>
+            <form class="booking-form" onsubmit="handleQuickBooking(event)">
+                <div class="form-row">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-row">
+                    <input type="tel" placeholder="Phone Number" required>
+                    <select required>
+                        <option value="">Select Destination</option>
+                        <option value="dubai">Dubai, UAE</option>
+                        <option value="thailand">Thailand</option>
+                        <option value="europe">Europe Tour</option>
+                        <option value="bali">Bali, Indonesia</option>
+                        <option value="japan">Japan</option>
+                        <option value="maldives">Maldives</option>
+                        <option value="switzerland">Switzerland</option>
+                        <option value="greece">Greece</option>
+                        <option value="egypt">Egypt</option>
+                        <option value="custom">Custom Package</option>
+                    </select>
+                </div>
+                <textarea placeholder="Tell us about your dream international trip..." rows="4"></textarea>
+                <button type="submit" class="submit-btn">Get Quote</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function bookPackage(packageName) {
+            alert(`Great choice! You selected: ${packageName}\n\nRedirecting to booking form...`);
+            window.location.href="booking.html"
+            // In a real website, this would redirect to a detailed booking page
+        }
+
+        function handleQuickBooking(event) {
+            event.preventDefault();
+            alert('Thank you for your interest in international travel! We will contact you within 24 hours with a customized quote.');
+            event.target.reset();
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Tripzee. All rights reserved.</p>
+    </footer>
+</body>
+</html>

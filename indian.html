@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Destinations - Tripzee</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="https://via.placeholder.com/60/667eea/white?text=T" alt="Tripzee Logo">
+                <h1>Tripzee</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="indian.html" class="active">INDIAN</a></li>
+                <li><a href="international.html">INTERNATIONAL</a></li>
+                <li><a href="ourpackages.html">OUR PACKAGES</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>🇮🇳 Incredible India</h1>
+            <p>Explore the land of diversity, culture, and timeless beauty</p>
+        </section>
+
+        <section class="packages-container">
+            <h2 class="section-title">Popular Indian Destinations</h2>
+            
+            <div class="packages-grid">
+                <div class="package-card">
+                    <img src="https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2018/08/16/Pictures/_dbca9ffa-a138-11e8-9345-8d51f8ed9678.jpg" alt="Goa Beach Package">
+                    <div class="package-info">
+                        <h3>Goa Beach Paradise</h3>
+                        <p class="destination">📍 Goa, India</p>
+                        <p class="duration">5 Days / 4 Nights</p>
+                        <div class="highlights">🏖️ Beaches • 🍤 Seafood • 🎉 Nightlife</div>
+                        <div class="price">₹15,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Goa Beach Paradise')">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <img src="https://www.oyorooms.com/travel-guide/wp-content/uploads/2021/06/Kerala-2-1.jpg" alt="Kerala Backwaters">
+                    <div class="package-info">
+                        <h3>Kerala Backwaters</h3>
+                        <p class="destination">📍 Kerala, India</p>
+                        <p class="duration">6 Days / 5 Nights</p>
+                        <div class="highlights">🛶 Houseboat • 🌴 Coconut Groves • ☕ Spice Gardens</div>
+                        <div class="price">₹22,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Kerala Backwaters')">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <img src="https://s7ap1.scene7.com/is/image/incredibleindia/chittorgarh%20fort-chittorgarh-rajasthan-1-hero?qlt=82&ts=1726660527762" alt="Rajasthan Royal Tour">
+                    <div class="package-info">
+                        <h3>Rajasthan Royal Tour</h3>
+                        <p class="destination">📍 Rajasthan, India</p>
+                        <p class="duration">8 Days / 7 Nights</p>
+                        <div class="highlights">🏰 Palaces • 🐪 Desert Safari • 🎨 Culture</div>
+                        <div class="price">₹35,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Rajasthan Royal Tour')">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <img src="https://via.placeholder.com/350x250/667eea/white?text=Kashmir+Valley" alt="Kashmir Valley">
+                    <div class="package-info">
+                        <h3>Kashmir - Heaven on Earth</h3>
+                        <p class="destination">📍 Srinagar, Kashmir</p>
+                        <p class="duration">7 Days / 6 Nights</p>
+                        <div class="highlights">🏔️ Dal Lake • 🌸 Gardens • ⛷️ Snow Activities</div>
+                        <div class="price">₹28,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Kashmir Heaven on Earth')">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <img src="https://via.placeholder.com/350x250/8b5cf6/white?text=Golden+Triangle" alt="Golden Triangle">
+                    <div class="package-info">
+                        <h3>Golden Triangle Classic</h3>
+                        <p class="destination">📍 Delhi, Agra, Jaipur</p>
+                        <p class="duration">6 Days / 5 Nights</p>
+                        <div class="highlights">🕌 Taj Mahal • 🏰 Red Fort • 👑 Amber Palace</div>
+                        <div class="price">₹24,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Golden Triangle Classic')">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <img src="https://via.placeholder.com/350x250/764ba2/white?text=Himachal+Hills" alt="Himachal Pradesh">
+                    <div class="package-info">
+                        <h3>Himachal Hill Stations</h3>
+                        <p class="destination">📍 Shimla, Manali, Dharamshala</p>
+                        <p class="duration">8 Days / 7 Nights</p>
+                        <div class="highlights">🏔️ Mountains • 🎿 Adventure • 🏛️ Monasteries</div>
+                        <div class="price">₹26,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Himachal Hill Stations')">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <img src="https://via.placeholder.com/350x250/6366f1/white?text=Andaman+Islands" alt="Andaman Islands">
+                    <div class="package-info">
+                        <h3>Andaman Island Paradise</h3>
+                        <p class="destination">📍 Port Blair, Havelock</p>
+                        <p class="duration">5 Days / 4 Nights</p>
+                        <div class="highlights">🏝️ Islands • 🤿 Scuba Diving • 🐠 Marine Life</div>
+                        <div class="price">₹32,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Andaman Island Paradise')">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <img src="https://via.placeholder.com/350x250/8b5cf6/white?text=Uttarakhand+Spiritual" alt="Uttarakhand Spiritual">
+                    <div class="package-info">
+                        <h3>Uttarakhand Spiritual Journey</h3>
+                        <p class="destination">📍 Rishikesh, Haridwar, Dehradun</p>
+                        <p class="duration">6 Days / 5 Nights</p>
+                        <div class="highlights">🕉️ Yoga • 🏞️ Ganges • 🧘 Meditation</div>
+                        <div class="price">₹19,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Uttarakhand Spiritual Journey')">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <img src="https://via.placeholder.com/350x250/667eea/white?text=Northeast+Explorer" alt="Northeast India">
+                    <div class="package-info">
+                        <h3>Northeast India Explorer</h3>
+                        <p class="destination">📍 Assam, Meghalaya, Sikkim</p>
+                        <p class="duration">10 Days / 9 Nights</p>
+                        <div class="highlights">🌿 Tea Gardens • 🏔️ Living Bridges • 🦋 Wildlife</div>
+                        <div class="price">₹38,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Northeast India Explorer')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="special-offers">
+            <h2>🎉 Special Offers</h2>
+            <p>Book any Indian destination package and get up to 25% off! Limited time offer.</p>
+            <button class="offer-btn" onclick="showOffers()">View All Offers</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tripzee. All rights reserved. | Discover Incredible India with us!</p>
+    </footer>
+
+    <script>
+        function bookPackage(packageName) {
+            alert(`Great choice! You selected: ${packageName}\n\nRedirecting to booking form...`);
+            // In a real website, this would redirect to a detailed booking page
+            window.location.href="booking.html"
+        }
+
+        function showOffers() {
+            alert('Special Offers:\n\n• Book 2 packages, get 15% off total\n• Early bird booking: 20% off (book 30 days advance)\n• Group booking (4+ people): 25% off\n• Seasonal discounts available!\n\nCall us at +91-XXXXXXXXX for more details!');
+        }
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

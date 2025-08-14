@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Tripzee</title>
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/image.png" alt="Tripzee Logo">
+                <h1>Tripzee</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="indian.html">INDIAN</a></li>
+                <li><a href="international.html">INTERNATIONAL</a></li>
+                <li><a href="ourpackages.html">OUR PACKAGES</a></li>
+            </ul>
+            <div class="user-menu">
+                <span class="user-info" id="user-name">Welcome, Traveler!</span>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <div class="welcome-content">
+                <div class="welcome-text">
+                    <h1 id="welcome-message">Welcome back, Explorer!</h1>
+                    <p>Ready for your next adventure? Manage your bookings, discover new destinations, and plan your perfect getaway.</p>
+                </div>
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Active Bookings</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Trips Completed</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Countries Visited</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">₹2.5L</span>
+                        <span class="stat-label">Total Savings</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="dashboard-grid">
+            <!-- Current Bookings -->
+            <div class="dashboard-card">
+                <h2>📋 Current Bookings</h2>
+                
+                <div class="booking-item">
+                    <div class="booking-header">
+                        <div class="booking-title">Dubai Luxury Experience</div>
+                        <span class="booking-status">Confirmed</span>
+                    </div>
+                    <div class="booking-details">
+                        📅 March 15-20, 2025<br>
+                        👥 2 Travelers<br>
+                        💰 ₹91,998 (Paid)
+                    </div>
+                    <div class="booking-actions">
+                        <button class="action-btn" onclick="viewBooking('Dubai')">View Details</button>
+                        <button class="action-btn secondary" onclick="downloadTicket('Dubai')">Download</button>
+                    </div>
+                </div>
+
+                <div class="booking-item">
+                    <div class="booking-header">
+                        <div class="booking-title">Japan Cherry Blossom</div>
+                        <span class="booking-status pending">Pending Payment</span>
+                    </div>
+                    <div class="booking-details">
+                        📅 April 5-13, 2025<br>
+                        👥 1 Traveler<br>
+                        💰 ₹75,999 (Due: ₹30,000)
+                    </div>
+                    <div class="booking-actions">
+                        <button class="action-btn" onclick="payNow('Japan')">Pay Now</button>
+                        <button class="action-btn secondary" onclick="viewBooking('Japan')">View Details</button>
+                    </div>
+                </div>
+
+                <div class="booking-item">
+                    <div class="booking-header">
+                        <div class="booking-title">Sacred India Pilgrimage</div>
+                        <span class="booking-status">Confirmed</span>
+                    </div>
+                    <div class="booking-details">
+                        📅 May 20-30, 2025<br>
+                        👥 3 Travelers<br>
+                        💰 ₹1,97,997 (Paid)
+                    </div>
+                    <div class="booking-actions">
+                        <button class="action-btn" onclick="viewBooking('India')">View Details</button>
+                        <button class="action-btn secondary" onclick="addServices('India')">Add Services</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Travel History -->
+            <div class="dashboard-card">
+                <h2>🕒 Recent Travel History</h2>
+                
+                <div class="history-item">
+                    <div class="history-date">
+                        <div>JAN</div>
+                        <div>2025</div>
+                    </div>
+                    <div class="history-details">
+                        <h4>Thailand Adventure</h4>
+                        <p>Bangkok & Phuket • 7 Days • ⭐ 4.8/5 Rating</p>
+                    </div>
+                </div>
+
+                <div class="history-item">
+                    <div class="history-date">
+                        <div>DEC</div>
+                        <div>2024</div>
+                    </div>
+                    <div class="history-details">
+                        <h4>Goa Beach Paradise</h4>
+                        <p>Goa, India • 5 Days • ⭐ 4.6/5 Rating</p>
+                    </div>
+                </div>
+
+                <div class="history-item">
+                    <div class="history-date">
+                        <div>NOV</div>
+                        <div>2024</div>
+                    </div>
+                    <div class="history-details">
+                        <h4>Rajasthan Royal Tour</h4>
+                        <p>Rajasthan, India • 8 Days • ⭐ 4.9/5 Rating</p>
+                    </div>
+                </div>
+
+                <div class="history-item">
+                    <div class="history-date">
+                        <div>OCT</div>
+                        <div>2024</div>
+                    </div>
+                    <div class="history-details">
+                        <h4>Europe Classic Tour</h4>
+                        <p>Paris, Rome, London • 10 Days • ⭐ 4.7/5 Rating</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="dashboard-card">
+                <h2>⚡ Quick Actions</h2>
+                
+                <div class="quick-actions">
+                    <div class="action-card" onclick="browsePackages()">
+                        <span class="action-icon">🎯</span>
+                        <div class="action-title">Browse Packages</div>
+                        <div class="action-desc">Discover new destinations</div>
+                    </div>
+
+                    <div class="action-card" onclick="manageProfile()">
+                        <span class="action-icon">👤</span>
+                        <div class="action-title">Manage Profile</div>
+                        <div class="action-desc">Update your information</div>
+                    </div>
+
+                    <div class="action-card" onclick="supportCenter()">
+                        <span class="action-icon">🎧</span>
+                        <div class="action-title">Support Center</div>
+                        <div class="action-desc">Get help & assistance</div>
+                    </div>
+
+                    <div class="action-card" onclick="referFriends()">
+                        <span class="action-icon">🎁</span>
+                        <div class="action-title">Refer Friends</div>
+                        <div class="action-desc">Earn rewards & discounts</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personalized Recommendations -->
+            <div class="dashboard-card recommendations">
+                <h2>💡 Recommended For You</h2>
+                
+                <div class="recommendations-grid">
+                    <div class="recommendation-card" onclick="viewPackage('Maldives')">
+                        <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?w=300" alt="Maldives">
+                        <div class="recommendation-info">
+                            <h4>Maldives Luxury Resort</h4>
+                            <p>Perfect for your next romantic getaway</p>
+                            <div class="recommendation-price">₹95,999</div>
+                        </div>
+                    </div>
+
+                    <div class="recommendation-card" onclick="viewPackage('Switzerland')">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300" alt="Switzerland">
+                        <div class="recommendation-info">
+                            <h4>Switzerland Alps Adventure</h4>
+                            <p>Based on your love for mountain destinations</p>
+                            <div class="recommendation-price">₹89,999</div>
+                        </div>
+                    </div>
+
+                    <div class="recommendation-card" onclick="viewPackage('Bali')">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300" alt="Bali">
+                        <div class="recommendation-info">
+                            <h4>Bali Paradise</h4>
+                            <p>Similar travelers also loved this destination</p>
+                            <div class="recommendation-price">₹32,999</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Initialize dashboard with user data
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get user data from login (in real app, this would come from server/localStorage)
+            const userData = {
+                name: localStorage.getItem('userName') || 'Traveler',
+                email: localStorage.getItem('userEmail') || 'user@example.com'
+            };
+            
+            // Update welcome message
+            document.getElementById('welcome-message').textContent = `Welcome back, ${userData.name}!`;
+            document.getElementById('user-name').textContent = `${userData.name}`;
+        });
+
+        // Booking actions
+        function viewBooking(destination) {
+            alert(`Opening detailed view for ${destination} booking...\n\nThis would show:\n• Complete itinerary\n• Hotel details\n• Flight information\n• Emergency contacts\n• Booking modifications`);
+        }
+
+        function payNow(destination) {
+            alert(`Processing payment for ${destination} booking...\n\nRedirecting to secure payment gateway...`);
+        }
+
+        function downloadTicket(destination) {
+            alert(`Downloading travel documents for ${destination}...\n\nYour tickets and vouchers will be downloaded as PDF.`);
+        }
+
+        function addServices(destination) {
+            alert(`Additional services for ${destination}:\n\n• Travel insurance upgrade\n• Airport lounge access\n• Local SIM card\n• City tour guide\n• Spa services\n\nWhich would you like to add?`);
+        }
+
+        // Quick actions
+        function browsePackages() {
+            window.location.href = 'ourpackages.html';
+        }
+
+        function manageProfile() {
+            alert('Opening profile management...\n\nHere you can update:\n• Personal information\n• Travel preferences\n• Passport details\n• Emergency contacts\n• Communication preferences');
+        }
+
+        function supportCenter() {
+            alert('Tripzee Support Center\n\n📞 24/7 Hotline: 1800-TRIPZEE\n📧 Email: support@tripzee.com\n💬 Live Chat: Available now\n🎫 Raise a ticket: Book -> Support\n\nHow can we help you today?');
+        }
+
+        function referFriends() {
+            alert('Refer & Earn Program! 🎁\n\nYour referral code: TRIP2025\n\n• Friend gets 10% discount on first booking\n• You earn ₹2,000 credit for each successful referral\n• No limit on referrals!\n\nShare via WhatsApp, Email, or Social Media');
+        }
+
+        // Recommendations
+        function viewPackage(destination) {
+            alert(`Opening ${destination} package details...\n\nThis would show complete package information and booking options.`);
+        }
+
+        // Logout function
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                // Clear user data
+                localStorage.removeItem('userName');
+                localStorage.removeItem('userEmail');
+                
+                alert('Logged out successfully!\n\nThank you for using Tripzee. Have a great day!');
+                window.location.href = 'login.html';
+            }
+        }
+
+        // Simulated real-time updates
+        function updateStats() {
+            // In a real app, this would fetch latest data from server
+            console.log('Updating dashboard stats...');
+        }
+
+        // Auto-update every 30 seconds (in a real app)
+        setInterval(updateStats, 30000);
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Tripzee. All rights reserved. | Your travel partner for life</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripzee - Your Travel Companion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images\image.png" alt="Tripzee Logo">
+                <h1>Tripzee</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html" class="active">HOME</a></li>
+                <li><a href="indian.html">INDIAN</a></li>
+                <li><a href="international.html">INTERNATIONAL</a></li>
+                <li><a href="ourpackages.html">OUR PACKAGES</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Discover Your Next Adventure</h2>
+            <p>Explore amazing destinations with our curated travel packages</p>
+            <button class="cta-button" onclick="scrollToPackages()">Browse Packages</button>
+        </section>
+
+        <section class="indian-packages" id="packages">
+            <div class="section-header">
+                <h2>🇮🇳 Indian Destinations</h2>
+                <p>Discover the incredible diversity of India</p>
+                <a href="indian.html" class="view-all-btn">View All Indian Packages</a>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <img src="https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2018/08/16/Pictures/_dbca9ffa-a138-11e8-9345-8d51f8ed9678.jpg" alt="Goa Beach Package">
+                    <div class="package-info">
+                        <h3>Goa Beach Paradise</h3>
+                        <p class="destination">📍 Goa, India</p>
+                        <p class="duration">5 Days / 4 Nights</p>
+                        <div class="highlights">🏖️ Beaches • 🍤 Seafood • 🎉 Nightlife</div>
+                        <div class="price">₹15,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Goa Beach Paradise')">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <img src="https://www.oyorooms.com/travel-guide/wp-content/uploads/2021/06/Kerala-2-1.jpg" alt="Kerala Backwaters">
+                    <div class="package-info">
+                        <h3>Kerala Backwaters</h3>
+                        <p class="destination">📍 Kerala, India</p>
+                        <p class="duration">6 Days / 5 Nights</p>
+                        <div class="highlights">🛶 Houseboat • 🌴 Coconut Groves • ☕ Spice Gardens</div>
+                        <div class="price">₹22,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Kerala Backwaters')">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <img src="https://s7ap1.scene7.com/is/image/incredibleindia/chittorgarh%20fort-chittorgarh-rajasthan-1-hero?qlt=82&ts=1726660527762" alt="Rajasthan Royal Tour">
+                    <div class="package-info">
+                        <h3>Rajasthan Royal Tour</h3>
+                        <p class="destination">📍 Rajasthan, India</p>
+                        <p class="duration">8 Days / 7 Nights</p>
+                        <div class="highlights">🏰 Palaces • 🐪 Desert Safari • 🎨 Culture</div>
+                        <div class="price">₹35,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Rajasthan Royal Tour')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="international-packages">
+            <div class="section-header">
+                <h2>🌍 International Destinations</h2>
+                <p>Explore the world beyond borders</p>
+                <a href="international.html" class="view-all-btn">View All International Packages</a>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9u1YzRPduJdaYvl_VUG3MXrZWuFbRD-Fc2w&s" alt="Dubai Luxury">
+                    <div class="package-info">
+                        <h3>Dubai Luxury Experience</h3>
+                        <p class="destination">🌍 Dubai, UAE</p>
+                        <p class="duration">5 Days / 4 Nights</p>
+                        <div class="highlights">🏢 Burj Khalifa • 🛍️ Shopping • 🏖️ Beaches</div>
+                        <div class="price">₹45,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Dubai Luxury Experience')">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <img src="https://www.shutterstock.com/image-photo/traveler-woman-joy-relaxing-on-600nw-1041475570.jpg" alt="Thailand Adventure">
+                    <div class="package-info">
+                        <h3>Thailand Adventure</h3>
+                        <p class="destination">🌍 Bangkok & Phuket</p>
+                        <p class="duration">7 Days / 6 Nights</p>
+                        <div class="highlights">🛕 Temples • 🏝️ Islands • 🍜 Street Food</div>
+                        <div class="price">₹38,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Thailand Adventure')">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqw2Pjaic3U-Rq-XDXEMzKZGlu-V8BgPOdaQ&s" alt="Europe Classic">
+                    <div class="package-info">
+                        <h3>Europe Classic Tour</h3>
+                        <p class="destination">🌍 Paris, Rome, London</p>
+                        <p class="duration">10 Days / 9 Nights</p>
+                        <div class="highlights">🗼 Eiffel Tower • 🏛️ Colosseum • 🎭 West End</div>
+                        <div class="price">₹85,999 <span class="per-person">per person</span></div>
+                        <button class="book-btn" onclick="bookPackage('Europe Classic Tour')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-booking">
+            <h2>Quick Booking</h2>
+            <form class="booking-form" onsubmit="handleQuickBooking(event)">
+                <div class="form-row">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-row">
+                    <input type="tel" placeholder="Phone Number" required>
+                    <select required>
+                        <option value="">Select Package Type</option>
+                        <option value="indian">Indian Destinations</option>
+                        <option value="international">International Destinations</option>
+                        <option value="custom">Custom Package</option>
+                    </select>
+                </div>
+                <center><textarea placeholder="Tell us about your dream trip..." rows="3"></textarea></center>
+                <button type="submit" class="submit-btn">Get Quote</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function scrollToPackages() {
+            document.getElementById('packages').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function bookPackage(packageName) {
+            alert(`Great choice! You selected: ${packageName}\n\nRedirecting to booking form...`);
+            // In a real website, this would redirect to a detailed booking page
+        }
+
+        function handleQuickBooking(event) {
+            event.preventDefault();
+            alert('Thank you for your interest! We will contact you within 24 hours with a customized quote.');
+            event.target.reset();
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Tripzee. All rights reserved.</p>
+    </footer>
+</body>
+</html>

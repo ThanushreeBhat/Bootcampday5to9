@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Packages - Tripzee</title>
+     <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/image.png" alt="Tripzee Logo">
+                <h1>Tripzee</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="indian.html">INDIAN</a></li>
+                <li><a href="international.html">INTERNATIONAL</a></li>
+                <li><a href="ourpackages.html" class="active">OUR PACKAGES</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>🎯 Our Exclusive Packages</h1>
+            <p>Carefully curated travel experiences with the best deals and unique adventures</p>
+        </div>
+
+        <h2 class="section-title">Featured Travel Packages</h2>
+
+        <div class="packages-grid">         
+
+            <!-- Package 1: Adventure Package -->
+            <div class="package-card">
+                <div class="offer-badge">ADVENTURE</div>
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500" alt="Nepal Adventure">
+                <div class="package-info">
+                    <div class="package-category">Adventure Trek</div>
+                    <h3>Nepal Himalayan Adventure</h3>
+                    <p class="destination">🏔️ Nepal - Everest Base Camp</p>
+                    <p class="duration">12 Days / 11 Nights</p>
+                    <div class="highlights">🥾 Trekking • 🏔️ Mountain Views • 🏕️ Camping • 🧗‍♂️ Rock Climbing</div>
+                    
+                    <div class="package-features">
+                        <h4>Adventure Includes:</h4>
+                        <ul class="features-list">
+                            <li>Professional trek guide & porter</li>
+                            <li>All camping equipment provided</li>
+                            <li>Mountain meals & accommodation</li>
+                            <li>Everest Base Camp certificate</li>
+                            <li>Emergency rescue insurance</li>
+                        </ul>
+                    </div>
+
+                    <div class="price-section">
+                        <div>
+                            <span class="price">₹89,999</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <div class="savings">Early Bird</div>
+                    </div>
+                    <button class="book-btn" onclick="bookPackage('Nepal Himalayan Adventure')">Book Now</button>
+                </div>
+            </div>
+
+            <!-- Package 2: Family Package -->
+            <div class="package-card">
+                <div class="offer-badge">FAMILY DEAL</div>
+                <img src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=500" alt="Singapore Family">
+                <div class="package-info">
+                    <div class="package-category">Family Fun</div>
+                    <h3>Singapore Family Wonderland</h3>
+                    <p class="destination">🎡 Singapore - Universal Studios & More</p>
+                    <p class="duration">6 Days / 5 Nights</p>
+                    <div class="highlights">🎢 Theme Parks • 🦁 Zoo Safari • 🌊 Sentosa Island • 🛍️ Shopping</div>
+                    
+                    <div class="package-features">
+                        <h4>Family Package Includes:</h4>
+                        <ul class="features-list">
+                            <li>Universal Studios tickets for all</li>
+                            <li>Singapore Zoo & Night Safari</li>
+                            <li>Sentosa Island attractions</li>
+                            <li>Family-friendly hotel stay</li>
+                            <li>Kids eat free at selected restaurants</li>
+                        </ul>
+                    </div>
+
+                    <div class="price-section">
+                        <div>
+                            <span class="price">₹1,89,999</span>
+                            <span class="per-person">for family of 4</span>
+                        </div>
+                        <div class="savings">Best Value</div>
+                    </div>
+                    <button class="book-btn" onclick="bookPackage('Singapore Family Wonderland')">Book Now</button>
+                </div>
+            </div>
+
+            <!-- Package 3: Cultural Heritage -->
+            <div class="package-card">
+                <div class="offer-badge">HERITAGE</div>
+                <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=500" alt="India Golden Triangle">
+                <div class="package-info">
+                    <div class="package-category">Cultural Heritage</div>
+                    <h3>India's Golden Triangle</h3>
+                    <p class="destination">🕌 Delhi - Agra - Jaipur</p>
+                    <p class="duration">8 Days / 7 Nights</p>
+                    <div class="highlights">🏛️ Taj Mahal • 🏰 Red Fort • 👑 City Palace • 🐘 Elephant Ride</div>
+                    
+                    <div class="package-features">
+                        <h4>Heritage Experience:</h4>
+                        <ul class="features-list">
+                            <li>Private guided tours with historian</li>
+                            <li>Luxury heritage hotel stays</li>
+                            <li>Traditional cultural performances</li>
+                            <li>Authentic local cuisine experiences</li>
+                            <li>AC transportation with driver</li>
+                        </ul>
+                    </div>
+
+                    <div class="price-section">
+                        <div>
+                            <span class="price">₹45,999</span>
+                            <span class="original-price">₹55,999</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <div class="savings">Limited Time</div>
+                    </div>
+                    <button class="book-btn" onclick="bookPackage('India Golden Triangle')">Book Now</button>
+                </div>
+            </div>
+
+            <!-- Package 4: Luxury Cruise -->
+            <div class="package-card">
+                <div class="offer-badge">LUXURY</div>
+                <img src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?w=500" alt="Mediterranean Cruise">
+                <div class="package-info">
+                    <div class="package-category">Luxury Cruise</div>
+                    <h3>Mediterranean Grand Cruise</h3>
+                    <p class="destination">🚢 Italy - Spain - France - Greece</p>
+                    <p class="duration">14 Days / 13 Nights</p>
+                    <div class="highlights">🛳️ Luxury Ship • 🍾 Fine Dining • 🎭 Entertainment • 🏖️ Multiple Ports</div>
+                    
+                    <div class="package-features">
+                        <h4>Cruise Includes:</h4>
+                        <ul class="features-list">
+                            <li>Balcony cabin with ocean view</li>
+                            <li>All meals & 24-hour room service</li>
+                            <li>Shore excursions at each port</li>
+                            <li>Onboard entertainment & spa</li>
+                            <li>Wi-Fi and gratuities included</li>
+                        </ul>
+                    </div>
+
+                    <div class="price-section">
+                        <div>
+                            <span class="price">₹2,25,999</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <div class="savings">All Inclusive</div>
+                    </div>
+                    <button class="book-btn" onclick="bookPackage('Mediterranean Grand Cruise')">Book Now</button>
+                </div>
+            </div>
+
+            <!-- Package 5: Spiritual Journey -->
+            <div class="package-card">
+                <div class="offer-badge">SPIRITUAL</div>
+                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=500" alt="Spiritual India">
+                <div class="package-info">
+                    <div class="package-category">Spiritual Journey</div>
+                    <h3>Sacred India Pilgrimage</h3>
+                    <p class="destination">🕉️ Varanasi - Rishikesh - Haridwar - Kedarnath</p>
+                    <p class="duration">10 Days / 9 Nights</p>
+                    <div class="highlights">🛕 Ancient Temples • 🧘‍♀️ Yoga & Meditation • 🕯️ Ganga Aarti • 🏔️ Char Dham</div>
+                    
+                    <div class="package-features">
+                        <h4>Spiritual Experience Includes:</h4>
+                        <ul class="features-list">
+                            <li>Guided temple visits with priest</li>
+                            <li>Daily yoga & meditation sessions</li>
+                            <li>Ganga Aarti ceremony participation</li>
+                            <li>Helicopter ride to Kedarnath</li>
+                            <li>Sacred river boat rides</li>
+                            <li>Spiritual discourse sessions</li>
+                        </ul>
+                    </div>
+
+                    <div class="price-section">
+                        <div>
+                            <span class="price">₹65,999</span>
+                            <span class="original-price">₹75,999</span>
+                            <span class="per-person">per person</span>
+                        </div>
+                        <div class="savings">Inner Peace</div>
+                    </div>
+                    <button class="book-btn" onclick="bookPackage('Sacred India Pilgrimage')">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="special-offers">
+            <h2>🎉 Special Offers This Month</h2>
+            <p>Book any package this month and get exclusive bonuses: Free travel insurance, complimentary airport lounge access, and 24/7 travel support!</p>
+            <a href="#" class="offer-btn" onclick="showSpecialOffers()">View All Offers</a>
+        </section>
+    </main>
+
+    <script>
+        function bookPackage(packageName) {
+            alert(`Excellent choice! You selected: ${packageName}\n\nYou'll be redirected to our detailed booking form with pricing and available dates.`);
+            // In a real website, this would redirect to a detailed booking page
+        window.location.href="booking.html"
+        }
+
+        function showSpecialOffers() {
+            alert('Special Monthly Offers:\n\n✈️ Free Travel Insurance (worth ₹5,000)\n🛄 Complimentary Airport Lounge Access\n📞 24/7 Dedicated Travel Support\n🎁 Surprise Welcome Gift\n💳 Easy EMI Options Available\n\nValid for bookings made this month only!');
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Tripzee. All rights reserved.</p>
+    </footer>
+</body>
+</html>

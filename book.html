@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Booking</title>
+    <style>
+        body {
+            background-image: url('https://wallpaperaccess.com/full/706923.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #TBOOK {
+            background-color: #e0f7fa;
+            color: rgb(29, 7, 235);
+            padding: 10px;
+            border-radius: 30px;
+            width: 400px;
+            margin-top: 30px;
+        }
+
+        #form {
+            align-items: center;
+            background-color: #ffffff;
+            color: #023047;
+            padding: 20px;
+            border-radius: 20px;
+            border: 2px solid #83c5be;
+            width: 250px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        input {
+            margin: 10px 0;
+            padding: 5px;
+            width: 90%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 120px;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #006d77;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        
+    </style>
+
+    <script>
+        function travel() {
+            const name = document.getElementById("name").value;
+            const passenger = document.getElementById("Passenger").value;
+            const date = document.getElementById("date").value;
+            c
+
+            const travel = { name: name, passenger: passenger, date: date };
+            console.log([travel]);
+
+            if (name !== "" && date !== "" && passenger !== "") {
+                alert("Details Saved successfully");
+                window.location.href = "C://Users/User/day 3/success.html";  
+            } 
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1 id="TBOOK">Book My Travel</h1>
+
+        <form id="form">
+            <label for="name">Name:</label><br />
+            <input type="text" id="name" name="name" placeholder="Fullname" /><br />
+
+            <label for="Passenger">Passenger:</label><br />
+            <input type="number" id="Passenger" name="Passenger" placeholder="No. of Passengers" /><br />
+
+            <label for="date">Date of Journey:</label><br />
+            <input type="date" id="date" name="travel date" /><br />
+
+            <button  onclick="travel()">Submit</button>
+              </center>  
+            </body>
+            </html> 
+

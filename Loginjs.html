@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Login Form</title>
+    <script>
+        function login() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            var body = {
+                email: email,  // fix typo here
+                password: password
+            };
+
+            var request = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(body)
+            };
+
+            fetch('http://localhost:3000/login', request)
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="event.preventDefault(); login();">
+        <label for="email">Email:</label>
+        <input type="text" id="email"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

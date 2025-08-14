@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>
+        Login Form
+    </title>
+    <script>
+        function login(){
+            var email=document.getElementById("email").value;
+            var password=document.getElementById("password").value;
+
+            var body={
+                "email":email,
+                "password": password
+            }
+            var request ={
+                method:"post"
+            }
+            fetch('http://localhost:3000/login',
+            request,
+            JSON.stringify(body))
+            .then((response)=> response.json())
+            .then((data)=>console.log(data));
+        }
+    </script>
+</head>
+<body>
+<form>
+    <label for="email">Email:</label>
+    <input type="text" id="email"><br><br>
+    <label for="password">Password:</label>
+    <input type="text" id="password"><br><br>
+</form>
+<button onclick="login()">submit</button>
+</body>
+</html>
